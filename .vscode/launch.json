@@ -1,0 +1,21 @@
+{
+    "version": "0.3.0",
+    "configurations": [
+        {
+            "name": "Launch Server (cmd/server)",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/cmd/server", // <--- Corrected path
+            "env": {
+                // You can add environment variables here if needed for debugging
+                // For example, to explicitly set the port for local debugging:
+                "PORT": "8080"
+                // "DB_HOST": "localhost",
+                // "DB_PORT": "5432"
+            },
+            "console": "integratedTerminal" // Optional: Runs in VS Code's integrated terminal
+            // "args": [] // Add command line arguments if your application takes any
+        }
+    ]
+}

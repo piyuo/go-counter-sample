@@ -1,0 +1,50 @@
+// ===============================================
+// Proto: auth.proto
+// Description: Protocol buffer definition for authentication service
+//
+// Services:
+//   - AuthService: Authentication operations
+//
+// Messages:
+//   - LoginRequest: Login request payload
+//   - LoginResponse: Login response payload
+//   - HealthRequest/Response: Health check
+// ===============================================
+
+syntax = "proto3";
+
+package auth;
+
+option go_package = "github.com/piyuo/go-counter-sample/internal/grpc/pb";
+
+// AuthService provides authentication operations
+service AuthService {
+  // Login authenticates a user
+  rpc Login(LoginRequest) returns (LoginResponse);
+
+  // Health check
+  rpc Health(HealthRequest) returns (HealthResponse);
+}
+
+// LoginRequest represents a login request
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+// LoginResponse represents a login response
+message LoginResponse {
+  bool success = 1;
+  string message = 2;
+  string user_id = 3;
+  string token = 4;
+}
+
+// Health check messages
+message HealthRequest {}
+
+message HealthResponse {
+  string status = 1;
+  string service = 2;
+  string version = 3;
+}

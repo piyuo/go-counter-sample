@@ -1,0 +1,14 @@
+{
+	"name": "noname",
+	"typeOnly": false,
+	"dartMap": true,
+	"goPath": [
+		"go"
+	],
+	"dartPath": [
+		"dart"
+	],
+	"protos": {
+		"auth": 1000
+	}
+}
